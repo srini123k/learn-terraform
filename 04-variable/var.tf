@@ -47,5 +47,5 @@ variable "sample8" {
 }
 
 output "types" {
-  value = "Variable sample6 - ${var.sample6}, first value in list - ${var.sample7[0]}, Boolean value of - ${var.sample8[boolean]}  "
+  value = "Variable sample6 - ${var.sample6}, first value in list - ${var.sample7[0]}, Boolean value of - ${var.sample8["boolean"]}  "
 }
