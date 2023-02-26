@@ -10,4 +10,3 @@ resource "aws_instance" "frontend" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-097c3942d3049b419"]
   }
-}
