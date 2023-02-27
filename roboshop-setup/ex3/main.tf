@@ -4,14 +4,13 @@ data "aws_ami" "ami" {
   owners           = ["973714476881"]
 }
 
-resource "aws_instance" "frontend" {
-  count                  = length(var.instances)
-  ami                    = data.aws_ami.ami.image_id
-  instance_type          = "t3.micro"
+resource "aws_instance" "instances{
+for_each = var.instances
+ ami                    = data.aws_ami.ami.image_id
+  instance_type          = each.value["type"]
   vpc_security_group_ids = ["sg-097c3942d3049b419"]
   tags = {
-    Name = var.instances[count.index]
-  }
+    Name = each.value["name"]
 }
 
 variable "instances" {
