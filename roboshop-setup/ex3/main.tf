@@ -4,7 +4,7 @@ data "aws_ami" "ami" {
   owners           = ["973714476881"]
 }
 
-resource "aws_instance" "instances{
+resource "aws_instance" "instances"{
 for_each = var.instances
  ami                    = data.aws_ami.ami.image_id
   instance_type          = each.value["type"]
@@ -12,7 +12,7 @@ for_each = var.instances
   tags = {
     Name = each.value["name"]
 }
-
+}
 variable "instances" {
   default = {
     catalogue={
