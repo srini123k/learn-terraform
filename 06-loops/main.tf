@@ -15,15 +15,15 @@ resource "null_resource" "d2" {
 }
 
 variable "d3" {
-  default ={
-    apple ={
-      name="apple"
-    count=5
-  }
-  }
-  banana ={
-    name="banana"
-    count=3
+  default = {
+    apple = {
+      name  = "apple"
+      count = 5
+    }
+    banana = {
+      name  = "banana"
+      count = 3
+    }
   }
 }
 
