@@ -30,7 +30,3 @@ variable "d3" {
 resource "null_resource" "d3" {
   for_each = var.d3
 }
-
-resource "null_resource" "d2" {
-  count = length(var.d2)
-}
